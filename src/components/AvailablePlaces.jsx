@@ -33,9 +33,9 @@ export default function AvailablePlaces({ onSelectPlace }) {
       try {
         const places = await fetchAvailablePlaces();
         // now we are trying to set the locations based of the nearest of the user location
-        navigator.geolocation.getCurrentPosition((position)=>{
+        navigator.geolocation.getCurrentPosition((position) => {
 
-          const sortedPlaces  = sortPlacesByDistance(places , position.coords.latitude, position.coords.longitude);
+          const sortedPlaces = sortPlacesByDistance(places, position.coords.latitude, position.coords.longitude);
 
           setAvailablePlaces(sortedPlaces);
           setIsFetching(false);
@@ -43,15 +43,15 @@ export default function AvailablePlaces({ onSelectPlace }) {
 
 
       } catch (error) {
-        setError({message: error.message || "Could not found Places, Please try again later"});
+        setError({ message: error.message || "Could not found Places, Please try again later" });
         setIsFetching(false);
       }
     };
     fetchPlaces();
   });
 
-  if(error){
-    return <Error title="An error Occured!" message={error.message}/>
+  if (error) {
+    return <Error title="An error Occured!" message={error.message} />
   }
 
 

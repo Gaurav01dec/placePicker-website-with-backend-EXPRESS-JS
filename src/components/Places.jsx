@@ -1,4 +1,4 @@
-export default function Places({ title, places, fallbackText, onSelectPlace,isLoading,loadingText }) {
+export default function Places({ title, places, fallbackText, onSelectPlace, isLoading, loadingText }) {
   // debugger;
   return (
     <section className="places-category">
