@@ -15,7 +15,7 @@ export async function updateUserPlaces(places) {
     const response = await fetch("http://localhost:3000/user-places", {
         method: 'PUT',
         //places is an array but we have to conert it to json format
-        body: JSON.stringify(places),
+        body: JSON.stringify({places:places}),
         headers: {
             'Content-Type': 'application/json'
         }

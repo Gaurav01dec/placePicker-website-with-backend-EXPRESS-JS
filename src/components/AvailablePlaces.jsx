@@ -46,8 +46,6 @@ export default function AvailablePlaces({ onSelectPlace }) {
         setError({message: error.message || "Could not found Places, Please try again later"});
         setIsFetching(false);
       }
-
-      
     };
     fetchPlaces();
   });
