@@ -5,6 +5,7 @@ import Modal from './components/Modal.jsx';
 import DeleteConfirmation from './components/DeleteConfirmation.jsx';
 import logoImg from './assets/logo.png';
 import AvailablePlaces from './components/AvailablePlaces.jsx';
+import { updateUserPlaces } from './http.js';
 
 function App() {
   const selectedPlace = useRef();
@@ -32,6 +33,9 @@ function App() {
       }
       return [selectedPlace, ...prevPickedPlaces];
     });
+
+    updateUserPlaces([selectedPlace, ...userPlaces])
+
   }
 
   const handleRemovePlace = useCallback(async function handleRemovePlace() {
